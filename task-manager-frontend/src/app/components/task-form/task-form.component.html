@@ -1,0 +1,24 @@
+<div class="task-form">
+  <h2 class="form-title">Ajouter une nouvelle tâche</h2>
+  <form [formGroup]="taskForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <input 
+        type="text" 
+        formControlName="title" 
+        placeholder="Que devez-vous faire ?"
+        class="form-control"
+      >
+      <div *ngIf="taskForm.get('title')?.invalid && taskForm.get('title')?.touched" 
+           class="error-message">
+        Le titre est obligatoire
+      </div>
+    </div>
+    <button 
+      type="submit" 
+      class="submit-btn"
+      [disabled]="taskForm.invalid"
+    >
+      <i class="fas fa-plus"></i> Ajouter
+    </button>
+  </form>
+</div>

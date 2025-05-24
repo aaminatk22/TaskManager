@@ -1,0 +1,20 @@
+<div class="task-list">
+  <h2 class="list-title">Mes Tâches</h2>
+  
+  <div *ngIf="tasks.length === 0" class="empty-state">
+    <p>Aucune tâche pour le moment. Ajoutez votre première tâche !</p>
+  </div>
+
+  <div *ngFor="let task of tasks" class="task-item">
+    <input 
+      type="checkbox" 
+      class="task-checkbox"
+      [checked]="task.completed" 
+      (change)="toggleTaskCompletion(task)"
+    >
+    <h3 class="task-title" [class.completed]="task.completed">{{ task.title }}</h3>
+    <button (click)="deleteTask(task.id)" class="delete-btn">
+      <i class="fas fa-trash"></i> Supprimer
+    </button>
+  </div>
+</div>
