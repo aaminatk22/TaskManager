@@ -41,15 +41,19 @@ Une application moderne de gestion de tâches développée avec :
 - Angular CLI (v19)
 
 ### Backend
+```bash
 cd task-manager-backend
 npm install
 node server.js
+```
 
 ### Frontend
+```bash
 cd task-manager-frontend
 npm install
 ng serve
+```
 Ouvrez ensuite http://localhost:4200 dans votre navigateur
 
 ##  🖼 Capture d'écran
-![TaskManager](image.png)
+![TaskManagerPro](image-1.png)
